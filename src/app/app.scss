@@ -16,7 +16,14 @@
 // automatically applied to the <body> element in the app.
 .toolbar-background {
 		background: transparent;
+		border-color:transparent !important;
 	}
+	h1 {
+			font-family: "SF Display";
+			font-weight: 800;
+			margin-left: 7px;
+			font-size: 24px;
+		}
 	.header-md::after{
 		display:none;
 	}

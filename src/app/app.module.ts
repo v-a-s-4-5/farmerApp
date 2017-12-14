@@ -2,8 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
+import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
+import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
+import { PodprocedurePage } from '../pages/podprocedure/podprocedure';
+import { SearchPage } from '../pages/search/search';
+import { MorePage } from '../pages/more/more';
+import { HistoryPage } from '../pages/history/history';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -18,12 +22,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    SearchPage,
     WelcomePage,
     ContactPage,
+    MorePage,
     HomePage,
     FarmersignupPage,
     NearbyfarmsPage,
+    PodprocedurePage,
+    BuyprocedurePage,
+    SellprocedurePage,
+    HistoryPage,
     SignupPage,
     LoginPage,
     TabsPage
@@ -35,11 +44,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    SearchPage,
     WelcomePage,
     ContactPage,
+    MorePage,
+    PodprocedurePage,
+    SellprocedurePage,
+    BuyprocedurePage,
     HomePage,
     FarmersignupPage,
+    HistoryPage,
     NearbyfarmsPage,
     SignupPage,
     LoginPage,

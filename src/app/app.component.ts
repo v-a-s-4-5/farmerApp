@@ -9,12 +9,17 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { FarmersignupPage } from '../pages/farmersignup/farmersignup';
 import { NearbyfarmsPage } from '../pages/nearbyfarms/nearbyfarms';
-
+import { SearchPage } from '../pages/search/search';
+import { MorePage } from '../pages/more/more';
+import { HistoryPage } from '../pages/history/history';
+import { PodprocedurePage } from '../pages/podprocedure/podprocedure';
+import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
+import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage;
+  rootPage:any = BuyprocedurePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
