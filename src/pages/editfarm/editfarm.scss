@@ -1,0 +1,40 @@
+page-editfarm {
+	.login{
+		.camera-input {
+			position: relative;
+			ion-icon {
+				position: absolute;
+				top: 11px;
+				font-size: 21px;
+				right: 14px;
+			}
+		}
+		button.signup {
+			line-height: 21px;
+			height: 41px;
+			width: 224px;
+			font-family: "SF Display";
+			font-weight: 600;
+			margin: 30px auto;
+			font-size: 18px;
+		}
+		ion-input {
+			font-family: "SF Display";
+			font-weight: 400;
+			font-size: 14px;
+		}
+		.row ion-col.col {
+			padding: 0 0 0 !important;
+		}
+		.item-input .item-inner  {
+			border-top: 0px solid #EEE !important;
+		}
+		.item-input{
+			border-bottom: 0px solid #eee !important;
+			padding: 0 0 0;
+		}
+	}
+	ion-navbar.toolbar {
+		border-bottom: 2px solid #eee;
+	}
+}

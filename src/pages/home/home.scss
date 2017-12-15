@@ -1,3 +1,121 @@
 page-home {
-
+	.scroll-content {
+		ion-slides{
+			height: auto !important;
+		}
+		padding: 0 0px;
+		.heading {
+		position:relative;
+			ion-label {
+				position: absolute;
+				right: 0;
+				top: -7px;
+				font-size: 16px;
+				font-weight: 500;
+			}
+		}
+			ion-searchbar.searchbar {
+			border-top: none;
+			background: transparent;
+			border-bottom: none;
+		}
+		.label-description ion-label {
+			font-size: 15px;
+			font-weight: 500;
+			text-align:left;
+			white-space: normal;
+			margin: 0 0 0 0 !important;
+		}
+		.label-description {
+			padding: 0 10px;
+			margin: 0 0 0;
+			p{
+				font-size:14px;
+				margin:0 0 0 0;
+				text-align:left;
+				font-family: "SF Display";
+			}
+		}
+		.cardimage {
+			position: relative;
+				img{
+					width:100%;
+				}
+				ion-icon.heart {
+				position: absolute;
+				left: 8px;
+				top: 5px;
+				font-size: 24px;
+				}
+				ion-icon.arrorleft {
+					position: absolute;
+					right: 9px;
+					bottom: 9px;
+					background: #fff;
+					border-radius: 50%;
+					padding: 2px 9px;
+					font-size: 24px;
+				}
+				.chip {
+					position: absolute;
+					bottom: 5px;
+					left: 9px;
+					color: #fff;
+					background:rgba(0, 0, 0, 0.52);
+				}
+		}
+	h2{
+		border-bottom: 1px solid #Ccc;
+		padding: 20px 10px 10px;
+		font-family: "SF Display";
+		font-size: 20px;
+		font-weight: 800;
+		}
+	ion-avatar img {
+		border-radius: 0 !important;
+	}	
+	ion-item p {
+		white-space: normal;
+		padding: 0 63px 0px 0px !important;
+		white-space: normal;
+		padding: 0 63px 0px 0px !important;
+		font-size: 16px;
+		font-family: "SF Display";
+		font-weight: 400;
+	}	
+	.arrowleft {
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		padding: 0px 7px;
+		font-size: 32px;
+		position: absolute;
+		transform: translateY(-50%);
+		right: 20px;
+		    box-shadow: 0px 8px 6px -6px black;
+		top: 50%;
+	}
+	h3 {
+		font-size: 16px;
+		font-family: "SF Display";
+		font-weight: 600 !important;
+	}
+	ion-item {
+		border-bottom: 2px solid #eee !important;
+	}
+	.item-inner {
+		border-bottom: 0px solid #eee !important;
+	}
+	h2.hourtwo {
+		padding: 8px 12px 11px !important;
+		border-top: 4px solid #eee;
+		margin-top: 0;
+	}
+	.arrowlast {
+		position: absolute;
+		right: 20px;
+		transform: translateY(-50%);
+		top: 50%;
+	}
+	}
 }

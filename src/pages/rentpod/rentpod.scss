@@ -1,0 +1,75 @@
+page-rentpod {
+.login{
+	padding: 0 10px;
+		.camera-input {
+			position: relative;
+			ion-icon {
+				position: absolute;
+				top: 11px;
+				font-size: 21px;
+				right: 14px;
+			}
+		}
+		button.signup {
+			line-height: 21px;
+			height: 41px;
+			width: 224px;
+			font-family: "SF Display";
+			font-weight: 600;
+			font-size: 18px;
+		}
+		ion-input {
+			font-family: "SF Display";
+			font-weight: 400;
+			font-size: 14px;
+		}
+		.row ion-col.col {
+			padding: 0 0 0 !important;
+		}
+		.item-input .item-inner  {
+			border-bottom: 0px solid #EEE !important;
+			border-top: 1px solid #EEE !important;
+		}
+		.item-input{
+			border-bottom: 0px solid #000 !important;
+			padding: 0 0 0;
+		}
+	}
+	h3 {
+    font-size: 18px;
+    font-family: "SF Display";
+    font-weight: 500;
+    padding: 0 18px;
+}
+.arrorleft {
+    position: absolute;
+        top: 50%;
+    font-size: 32px;
+    right: 14px;
+    transform: translateY(-50%);
+    border: 1px solid #eee;
+    border-radius: 50%;
+    padding: 2px 9px;
+}
+h2 {
+    padding: 0 16px;
+    font-family: "SF Display";
+    font-weight: 600;
+    font-size: 20px;
+	position: relative;
+}
+h2 span{
+    padding: 0 16px;
+    font-family: "SF Display";
+    font-weight: 600;
+    position: absolute;
+    right: 14px;
+}
+.rel
+{
+    position: relative;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 9px 0px;
+	}
+}

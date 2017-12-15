@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
@@ -15,11 +14,20 @@ import { HistoryPage } from '../pages/history/history';
 import { PodprocedurePage } from '../pages/podprocedure/podprocedure';
 import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
 import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
+import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
+import { AddpodsPage } from '../pages/addpods/addpods';
+import { EditfarmPage } from '../pages/editfarm/editfarm';
+import { YourpodPage } from '../pages/yourpod/yourpod';
+import { PaymentPage } from '../pages/payment/payment';
+import { RentpodPage } from '../pages/rentpod/rentpod';
+import { HomePage } from '../pages/home/home';
+import { ScreensPage } from '../pages/screens/screens';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = BuyprocedurePage;
+  rootPage:any = WelcomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

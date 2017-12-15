@@ -18,7 +18,13 @@ import { FarmersignupPage } from '../pages/farmersignup/farmersignup';
 import { NearbyfarmsPage } from '../pages/nearbyfarms/nearbyfarms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
+import { AddpodsPage } from '../pages/addpods/addpods';
+import { EditfarmPage } from '../pages/editfarm/editfarm';
+import { YourpodPage } from '../pages/yourpod/yourpod';
+import { PaymentPage } from '../pages/payment/payment';
+import { RentpodPage } from '../pages/rentpod/rentpod';
+import { ScreensPage } from '../pages/screens/screens';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,14 +34,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MorePage,
     HomePage,
     FarmersignupPage,
+    AddpodsPage,
     NearbyfarmsPage,
     PodprocedurePage,
+    YourpodPage,
+    AddbankaccountPage,
     BuyprocedurePage,
     SellprocedurePage,
+    RentpodPage,
+    PaymentPage,
+    EditfarmPage,
     HistoryPage,
     SignupPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+	ScreensPage
   ],
   imports: [
     BrowserModule,
@@ -50,14 +63,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MorePage,
     PodprocedurePage,
     SellprocedurePage,
+    AddpodsPage,
+    YourpodPage,
+    AddbankaccountPage,
     BuyprocedurePage,
     HomePage,
+    RentpodPage,
+    EditfarmPage,
+    PaymentPage,
     FarmersignupPage,
     HistoryPage,
     NearbyfarmsPage,
     SignupPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+	ScreensPage
   ],
   providers: [
     StatusBar,

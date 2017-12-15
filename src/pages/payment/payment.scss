@@ -1,0 +1,39 @@
+page-payment {
+	ion-item strong {
+		position: relative;
+		bottom: 11px;
+		text-align: center;
+		left: 14px;
+		font-family: "SF Display";
+		font-weight: 400 !important;
+	}
+	ion-item a {
+		position: absolute;
+		right: 0;
+		text-decoration: none;
+		transform: translateY(-50%);
+		top: 44%;
+		font-size: 16px;
+		font-family: "SF Display";
+		font-weight: 400 !important;
+	}
+	ion-header {
+		border-bottom: 1px solid #eee;
+	}
+	.payment {
+		padding: 0 10px;
+		border-bottom: 1px solid #ddd;
+	}
+	ion-list{
+		margin:0 0 0 0 !important;
+	}
+	button.signup {
+		line-height: 21px;
+		height: 41px;
+		width: 224px;
+		font-family: "SF Display";
+		font-weight: 600;
+		margin: 30px auto;
+		font-size: 18px;
+	}
+}
