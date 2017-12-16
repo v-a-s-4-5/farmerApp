@@ -1,0 +1,28 @@
+page-sendalerts {
+	ion-content {
+		p {
+			background: #eee;
+			padding: 4px 16px;
+			font-family: "SF Display";
+			font-weight: 500;
+			margin: 0;
+		}
+		ion-icon, ion-label {
+			margin: 0 !important;
+		}
+		ion-item span {
+			font-family: "SF Display";
+			font-weight: 500;
+		}
+		ion-item {
+			font-family: "SF Display";
+			font-weight: 400;
+		}
+		ion-icon {
+			color: #ccc;
+			font-size: 20px !important;
+			position: relative;
+			top: 4px;
+		}
+	}
+}

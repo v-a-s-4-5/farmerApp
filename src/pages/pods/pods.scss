@@ -1,0 +1,44 @@
+page-pods {
+	ion-row.row {
+		p {
+			margin: 3px 0 0;
+			text-align: center;
+			font-size: 14px;
+			font-family: "SF Display";
+			font-weight: 400;
+		}
+		ion-label {
+			background: #eee;
+			border-radius: 50%;
+			height: 60px;
+			width: 60px;
+			margin: 0 auto !important;
+			display: table !important;
+			text-align: center;
+			padding: 17px 0;
+			font-size: 24px;
+			font-family: "SF Display";
+			font-weight: 500;
+		}
+		ion-badge {
+			border-radius: 50% !important;
+			color: transparent !important;
+			position: absolute;
+			top: 9px;
+			height: 15px;
+			width: 15px;
+		}
+		.col {
+			margin-bottom: 20px !important;
+		}
+	}
+	button.signup {
+			line-height: 21px;
+			height: 41px;
+			width: 224px;
+			font-family: "SF Display";
+			font-weight: 600;
+			margin: 30px auto;
+			font-size: 18px;
+		}
+}

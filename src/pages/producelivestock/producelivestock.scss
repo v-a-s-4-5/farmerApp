@@ -1,0 +1,21 @@
+page-producelivestock {
+	ion-item {
+		border-bottom: 1px solid #ddd !important;
+	}
+	h1{
+		padding: 0 10px;
+	}
+	.item-inner {
+		border-bottom: 0px solid #ddd !important;
+		p {
+			font-weight: 400;
+			font-size: 14px;
+			color: #000 !important;
+		}
+		h2 {
+			font-family: "SF Display";
+			font-weight: 700 !important;
+			font-size: 18px !important;
+		}
+	}
+}

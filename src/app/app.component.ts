@@ -22,12 +22,14 @@ import { PaymentPage } from '../pages/payment/payment';
 import { RentpodPage } from '../pages/rentpod/rentpod';
 import { HomePage } from '../pages/home/home';
 import { ScreensPage } from '../pages/screens/screens';
-
+import { SendalertsPage } from '../pages/sendalerts/sendalerts';
+import { PodsPage } from '../pages/pods/pods';
+import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage;
+  rootPage:any = ProducelivestockPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

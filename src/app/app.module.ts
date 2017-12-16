@@ -20,11 +20,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
 import { AddpodsPage } from '../pages/addpods/addpods';
+import { PodsPage } from '../pages/pods/pods';
 import { EditfarmPage } from '../pages/editfarm/editfarm';
 import { YourpodPage } from '../pages/yourpod/yourpod';
 import { PaymentPage } from '../pages/payment/payment';
 import { RentpodPage } from '../pages/rentpod/rentpod';
 import { ScreensPage } from '../pages/screens/screens';
+import { SendalertsPage } from '../pages/sendalerts/sendalerts';
+import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
 @NgModule({
   declarations: [
     MyApp,
@@ -34,10 +37,13 @@ import { ScreensPage } from '../pages/screens/screens';
     MorePage,
     HomePage,
     FarmersignupPage,
+    ProducelivestockPage,
     AddpodsPage,
     NearbyfarmsPage,
     PodprocedurePage,
     YourpodPage,
+    PodsPage,
+    SendalertsPage,
     AddbankaccountPage,
     BuyprocedurePage,
     SellprocedurePage,
@@ -59,14 +65,17 @@ import { ScreensPage } from '../pages/screens/screens';
     MyApp,
     SearchPage,
     WelcomePage,
+    ProducelivestockPage,
     ContactPage,
     MorePage,
     PodprocedurePage,
+    SendalertsPage,
     SellprocedurePage,
     AddpodsPage,
     YourpodPage,
     AddbankaccountPage,
     BuyprocedurePage,
+    PodsPage,
     HomePage,
     RentpodPage,
     EditfarmPage,

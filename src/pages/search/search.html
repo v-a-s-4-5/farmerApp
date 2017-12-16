@@ -32,7 +32,7 @@
 	</div>
 	<div  class="customrow" *ngIf = "toggle">
 	<ion-row>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="call"></ion-icon><p>Call</p></div></ion-col>
+	  <ion-col col-3 (click)="showAlert()"><div class="custom-col"><ion-icon color="green" name="call"></ion-icon><p>Call</p></div></ion-col>
 	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="compass"></ion-icon><p>Website</p></div></ion-col>
 	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-heart-outline"></ion-icon><p>unfavorite</p></div></ion-col>
 	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-share-outline"></ion-icon><p>Share</p></div></ion-col>
