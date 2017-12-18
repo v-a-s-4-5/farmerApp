@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
 import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
+import { Buyproduce2Page } from '../pages/buyproduce2/buyproduce2';
 import { PodprocedurePage } from '../pages/podprocedure/podprocedure';
 import { SearchPage } from '../pages/search/search';
 import { MorePage } from '../pages/more/more';
@@ -26,15 +27,19 @@ import { YourpodPage } from '../pages/yourpod/yourpod';
 import { PaymentPage } from '../pages/payment/payment';
 import { RentpodPage } from '../pages/rentpod/rentpod';
 import { ScreensPage } from '../pages/screens/screens';
+import { ProduceselectedPage } from '../pages/produceselected/produceselected';
 import { SendalertsPage } from '../pages/sendalerts/sendalerts';
+import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
 @NgModule({
   declarations: [
     MyApp,
     SearchPage,
+    JaneinventoryPage,
     WelcomePage,
     ContactPage,
     MorePage,
+    ProduceselectedPage,
     HomePage,
     FarmersignupPage,
     ProducelivestockPage,
@@ -45,6 +50,7 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
     PodsPage,
     SendalertsPage,
     AddbankaccountPage,
+    Buyproduce2Page,
     BuyprocedurePage,
     SellprocedurePage,
     RentpodPage,
@@ -67,6 +73,8 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
     WelcomePage,
     ProducelivestockPage,
     ContactPage,
+    JaneinventoryPage,
+    ProduceselectedPage,
     MorePage,
     PodprocedurePage,
     SendalertsPage,
@@ -75,6 +83,7 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
     YourpodPage,
     AddbankaccountPage,
     BuyprocedurePage,
+    Buyproduce2Page,
     PodsPage,
     HomePage,
     RentpodPage,

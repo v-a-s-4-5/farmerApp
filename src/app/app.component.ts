@@ -15,6 +15,7 @@ import { PodprocedurePage } from '../pages/podprocedure/podprocedure';
 import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
 import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
 import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
+import { Buyproduce2Page } from '../pages/buyproduce2/buyproduce2';
 import { AddpodsPage } from '../pages/addpods/addpods';
 import { EditfarmPage } from '../pages/editfarm/editfarm';
 import { YourpodPage } from '../pages/yourpod/yourpod';
@@ -25,11 +26,14 @@ import { ScreensPage } from '../pages/screens/screens';
 import { SendalertsPage } from '../pages/sendalerts/sendalerts';
 import { PodsPage } from '../pages/pods/pods';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
+import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
+import { Podprocedure2Page } from '../pages/podprocedure2/podprocedure2';
+import { ProduceselectedPage } from '../pages/produceselected/produceselected';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ProducelivestockPage;
+  rootPage:any = Buyproduce2Page;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
