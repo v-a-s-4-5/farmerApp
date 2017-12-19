@@ -91,3 +91,29 @@
   font-weight: 100;
   src: url("../assets/SF-UI-Display-Ultralight.otf");
 }
+.alertcsscustom{
+.alert-title img {
+margin: 0 auto;
+display: table;
+}
+.alert-button-group {
+    padding: 0 0 13px !important;
+}
+.alert-button {
+    color: orange !important;
+    text-align: center !important;
+    float: none !important;
+    margin: 0 auto !important;
+    box-shadow: 1px 1px 4px #ccc;
+    width: 80%;
+}
+.alert-wrapper {
+    border-radius: 9px !important;
+}
+.alert-button span {
+    display: table;
+}
+.alert-title {
+    text-align: center;
+}
+}

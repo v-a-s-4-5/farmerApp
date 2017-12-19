@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController  } from 'ionic-angular';
-
+import { PaymentPage } from '../payment/payment';
 /**
  * Generated class for the ProduceselectedPage page.
  *
@@ -21,8 +21,8 @@ export class ProduceselectedPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProduceselectedPage');
   }
-  dismiss() {
-   this.viewCtrl.dismiss();
+  checkout() {
+   this.navCtrl.push(PaymentPage);
  }
 
 }

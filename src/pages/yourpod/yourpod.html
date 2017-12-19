@@ -15,5 +15,33 @@
 
 <ion-content padding>
 <img src="../assets/imgs/cabbage.PNG"/>
-<h1><ion-icon name="trophy"></ion-icon> 3341 points</h1>
+		<ion-row class="points">
+		  <ion-col col-8>
+		    <h1><ion-icon name="trophy"></ion-icon> 3341 points</h1>
+		  </ion-col>
+		  <ion-col col-4 text-right>
+		    <h5><ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft" item-right></ion-icon></h5>
+		  </ion-col>
+		</ion-row>
+		<h3>Farm options</h3>
+		<ion-row class="farmoption">
+		  <ion-col col-6>
+		    <ion-label color="orange">Information</ion-label>
+		  </ion-col>
+		  <ion-col col-6>
+		    <ion-label color="orange">Buy Produce</ion-label>
+		  </ion-col>
+		</ion-row>
+		<h3>Pod options</h3>
+		
+		<ion-row>
+		  <ion-col col-3 (click)="feed()"><div class="custom-col"><img src="../assets/imgs/feed-icon.png"></div><p>Feed</p></ion-col>
+		  <ion-col col-3><div class="custom-col"><img src="../assets/imgs/water-icon.png"></div><p>Water</p></ion-col>
+		  <ion-col col-3 (click)="fertilizer()"><div class="custom-col"><img src="../assets/imgs/fertilize-icon.png"></div><p>Fertilizer</p></ion-col>
+		  <ion-col col-3><div class="custom-col"><img src="../assets/imgs/weeding-icon.png"></div><p>Weeding</p></ion-col>
+		  <ion-col col-3 (click)="pesticide()"><div class="custom-col"><img src="../assets/imgs/website-icon.png"></div><p>Pesticide</p></ion-col>
+		  <ion-col col-3><div class="custom-col"><img src="../assets/imgs/update-video-icon.png"></div><p>Update Video</p></ion-col>
+		  <ion-col col-3 (click)="showAlert()"><div class="custom-col"><img src="../assets/imgs/alerts-icon.png"></div><p>Alerts</p></ion-col>
+		  <ion-col col-3><div class="custom-col"><img src="../assets/imgs/history-icon.png"></div><p>History</p></ion-col>
+		</ion-row>
 </ion-content>

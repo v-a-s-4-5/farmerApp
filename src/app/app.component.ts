@@ -18,6 +18,7 @@ import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
 import { Buyproduce2Page } from '../pages/buyproduce2/buyproduce2';
 import { AddpodsPage } from '../pages/addpods/addpods';
 import { EditfarmPage } from '../pages/editfarm/editfarm';
+import { SelectproducePage } from '../pages/selectproduce/selectproduce';
 import { YourpodPage } from '../pages/yourpod/yourpod';
 import { PaymentPage } from '../pages/payment/payment';
 import { RentpodPage } from '../pages/rentpod/rentpod';
@@ -27,13 +28,13 @@ import { SendalertsPage } from '../pages/sendalerts/sendalerts';
 import { PodsPage } from '../pages/pods/pods';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
 import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
-import { Podprocedure2Page } from '../pages/podprocedure2/podprocedure2';
 import { ProduceselectedPage } from '../pages/produceselected/produceselected';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = Buyproduce2Page;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

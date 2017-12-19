@@ -23,8 +23,10 @@ import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
 import { AddpodsPage } from '../pages/addpods/addpods';
 import { PodsPage } from '../pages/pods/pods';
 import { EditfarmPage } from '../pages/editfarm/editfarm';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import { YourpodPage } from '../pages/yourpod/yourpod';
 import { PaymentPage } from '../pages/payment/payment';
+import { SelectproducePage } from '../pages/selectproduce/selectproduce';
 import { RentpodPage } from '../pages/rentpod/rentpod';
 import { ScreensPage } from '../pages/screens/screens';
 import { ProduceselectedPage } from '../pages/produceselected/produceselected';
@@ -37,6 +39,8 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
     SearchPage,
     JaneinventoryPage,
     WelcomePage,
+    DashboardPage,
+    SelectproducePage,
     ContactPage,
     MorePage,
     ProduceselectedPage,
@@ -70,11 +74,13 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
   entryComponents: [
     MyApp,
     SearchPage,
+    DashboardPage,
     WelcomePage,
     ProducelivestockPage,
     ContactPage,
     JaneinventoryPage,
     ProduceselectedPage,
+    SelectproducePage,
     MorePage,
     PodprocedurePage,
     SendalertsPage,

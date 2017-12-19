@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
+import { AddbankaccountPage } from '../addbankaccount/addbankaccount';
 /**
  * Generated class for the PaymentPage page.
  *
@@ -21,5 +22,7 @@ export class PaymentPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentPage');
   }
-
+ selectpay() {
+   this.navCtrl.push(AddbankaccountPage);
+ }
 }

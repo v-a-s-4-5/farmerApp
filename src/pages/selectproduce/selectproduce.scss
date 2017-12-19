@@ -1,0 +1,40 @@
+page-selectproduce {
+.donetitle {
+    position: absolute;
+    right: 20px;
+	 font-family: "SF Display";
+    top: 7px;
+    font-size: 16px;
+}
+.farmoption {
+    background-image: url(../assets/imgs/mud.jpg);
+	    border-radius: 6px;
+	.inner {
+        height: 77px;
+    width: 77px;
+    background: rgba(0,0,0,0.5);
+    margin: 0 auto;
+	.inner img {
+    border-radius: 4px;
+}
+}
+	}
+	.farmoption2 {
+    box-shadow: 1px 1px 7px #ccc;
+    margin: 30px 0;
+    padding: 6px;
+	 font-family: "SF Display";
+	ion-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 26px;
+    font-size: 42px;
+	color:green;
+}
+}
+.farmoption2 img {
+    box-shadow: 1px 1px 7px #ccc;
+    height: 66px;
+}
+}

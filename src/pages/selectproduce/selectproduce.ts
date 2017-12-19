@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Buyproduce2Page } from '../buyproduce2/buyproduce2';
+
 /**
- * Generated class for the BuyprocedurePage page.
+ * Generated class for the SelectproducePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { Buyproduce2Page } from '../buyproduce2/buyproduce2';
 
 @IonicPage()
 @Component({
-  selector: 'page-buyprocedure',
-  templateUrl: 'buyprocedure.html',
+  selector: 'page-selectproduce',
+  templateUrl: 'selectproduce.html',
 })
-export class BuyprocedurePage {
+export class SelectproducePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuyprocedurePage');
+    console.log('ionViewDidLoad SelectproducePage');
   }
-	gobuy2(){
-		this.navCtrl.push(Buyproduce2Page);
-	}
+
 }
