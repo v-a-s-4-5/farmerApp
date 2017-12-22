@@ -2,6 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+import { FormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ComponentsModule } from '../components/components.module';
+
 import { SellprocedurePage } from '../pages/sellprocedure/sellprocedure';
 import { BuyprocedurePage } from '../pages/buyprocedure/buyprocedure';
 import { Buyproduce2Page } from '../pages/buyproduce2/buyproduce2';
@@ -33,6 +39,18 @@ import { ProduceselectedPage } from '../pages/produceselected/produceselected';
 import { SendalertsPage } from '../pages/sendalerts/sendalerts';
 import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
+import { UserProvider } from '../providers/user/user';
+import firebase from 'firebase';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyB6FnK7-2XtJHZcvWEalA6BkB-YbKae7T0",
+  authDomain: "farmr-38714.firebaseapp.com",
+  databaseURL: "https://farmr-38714.firebaseio.com",
+  projectId: "farmr-38714",
+  storageBucket: "farmr-38714.appspot.com",
+  messagingSenderId: "502360301964"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -68,7 +86,12 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    ComponentsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -106,7 +129,8 @@ import { ProducelivestockPage } from '../pages/producelivestock/producelivestock
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider
   ]
 })
 export class AppModule {}

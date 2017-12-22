@@ -6,37 +6,41 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <!--ion-title>Sign Up</ion-title-->
-  </ion-navbar>
+	<ion-navbar>
+		<!--ion-title>Sign Up</ion-title-->
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<ion-list class="login">
-		<h1>Farmer Sign Up</h1>
-	  <ion-item>
-		<ion-input type="text" placeholder="First Name"></ion-input>
-	  </ion-item>
-	   <ion-item>
-		<ion-input type="text" placeholder="Last Name"></ion-input>
-	  </ion-item>
-	  <ion-item>
-		<ion-input type="text" placeholder="Farm Name"></ion-input>
-	  </ion-item>
-	  <ion-item>
-		<ion-input type="text" placeholder="Address"></ion-input>
-	  </ion-item>
-	  <ion-item>
-		<ion-input type="text" placeholder="Email"></ion-input>
-	  </ion-item>
-	  <ion-item>
-		<ion-input type="password" placeholder="Password"></ion-input>
-	  </ion-item>
-	  <ion-item>
-		<button class="signup" ion-button round full center color="orange">SIGN UP</button>
-		<p><a href="#">Are You Not A Farmer?</a></p>
-	</ion-item>
-	</ion-list>
+	<form #farmerSignUp = 'ngForm' (ngSubmit) = "signUp()">
+		<ion-list class="login">
+			<h1>Farmer Sign Up</h1>
+			<ion-item>
+				<ion-input type="text" placeholder="First Name"  [(ngModel)] = "user.firstName" name="firstName" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="Last Name" [(ngModel)] = "user.lastName" name="lastName" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="Farm Name" [(ngModel)] = "user.farmName" name="farmName" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="Address" [(ngModel)] = "user.address" name="address" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="Email" [(ngModel)] = "user.email" name="email" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="password" placeholder="Password" [(ngModel)] = "user.password" name="password" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<button class="signup" ion-button round full center color="orange" [disabled] = "farmerSignUp.invalid">SIGN UP</button>
+				<p>
+					<a href="#">Are You Not A Farmer?</a>
+				</p>
+			</ion-item>
+		</ion-list>
+	</form>
 </ion-content>
