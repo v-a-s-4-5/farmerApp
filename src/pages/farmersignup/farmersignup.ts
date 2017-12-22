@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the FarmersignupPage page.
  *
@@ -26,7 +27,11 @@ export class FarmersignupPage {
   }
 
   signUp(){
-    this.userProvider.farmerSignUp(this.user);
+    this.userProvider.farmerSignUp(this.user).then( res => {
+      if(res){
+        localStorage.setItem('usertype','farmer');
+      }
+    });
   }
 
 }

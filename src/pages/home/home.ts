@@ -15,7 +15,7 @@ export class HomePage {
 		this.navCtrl.push(BuyprocedurePage);
   }
   
-  ionViewDidLoad(){
-    this.user.checkLogin();
+  gotoSearchPage(){
+    this.navCtrl.parent.select(1);
   }
 }

@@ -24,28 +24,27 @@ export class UserProvider {
   }
   
   checkLogin(){
-    this.afAuth.authState.subscribe( res =>{
-     console.log(res.uid);
+    return this.afAuth.authState.map( res =>{
+     if(res){
+       return res.uid;
+     }else{
+       return null;
+     }
     });
   }
 
   basicSignUp(user){
     let self = this;
-    this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then( res => {
+    return this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then( res => {
       if(res.uid){
         const newUser = this.afDB.list('/users');
-        newUser.push({
+        return newUser.push({
           createdate: new Date().getTime(),
           firstname: user.firstName,
           lastname: user.lastName,
           usertype: 'basic',
           uid: res.uid,
           zipcode: user.zipCode,
-        }).then( res => {
-          if(res){
-            localStorage.setItem('usertype','basic');
-            console.log("user added");
-          }
         });
       }
     }, err =>{
@@ -54,10 +53,10 @@ export class UserProvider {
   }
 
   farmerSignUp(user){
-    this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then( res => {
+   return this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then( res => {
       if(res.uid){
         const newUser = this.afDB.list('/users');
-        newUser.push({
+        return newUser.push({
           address: user.address,
           createdate: new Date().getTime(),
           firstname: user.firstName,
@@ -65,14 +64,14 @@ export class UserProvider {
           lastname: user.lastName,
           usertype: 'farmer',
           uid: res.uid,
-        }).then( res => {
-          if(res){
-            console.log("User Added");
-          }
         });
       }
     }, err =>{
       console.log(err);
     })
+  }
+
+  signOut(){
+    this.afAuth.auth.signOut().then( res => localStorage.removeItem('usertype'));
   }
 }
