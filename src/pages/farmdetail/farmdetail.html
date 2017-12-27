@@ -1,0 +1,85 @@
+<ion-header>
+    
+      <ion-navbar>
+        <!--ion-title>search</ion-title-->
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content>
+      <div class="heading">
+        <h1>Farm Details</h1>
+      </div>
+          <ion-card>
+            <div class="cardimage">
+              <img src="{{item.image}}"/>
+              <ion-chip> <ion-label>{{item.distance}}</ion-label></ion-chip>
+            </div>
+          </ion-card>
+          <div class="customrow">
+              <ion-row>
+                <ion-col col-3 (click)="showAlert()">
+                  <div class="custom-col">
+                    <ion-icon color="green" name="call"></ion-icon>
+                    <p>Call</p>
+                  </div>
+                </ion-col>
+                <ion-col col-3>
+                  <div class="custom-col">
+                    <ion-icon color="green" name="compass"></ion-icon>
+                    <p>Website</p>
+                  </div>
+                </ion-col>
+                <ion-col col-3>
+                  <div class="custom-col">
+                    <ion-icon *ngIf = "item.fav" color = "green" name="heart"></ion-icon>
+                    <ion-icon *ngIf = "!item.fav" color = "green" name="ios-heart-outline"></ion-icon>
+                    <p *ngIf = "item.fav">Favourite</p>
+                    <p *ngIf = "!item.fav">Unfavourite</p>
+                  </div>
+                </ion-col>
+                <ion-col col-3>
+                  <div class="custom-col">
+                    <ion-icon color="green" name="ios-share-outline"></ion-icon>
+                    <p>Share</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+      <h1>Available Options</h1>
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../assets/imgs/gift.png">
+          </ion-avatar>
+          <h2>Buy Local Produce</h2>
+          <p>Find a farm near your location to support by buying procudeure from</p>
+          <ion-icon (click)="gobuy()" name="ios-arrow-round-forward-outline" color="green" class="arrowleft"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../assets/imgs/handflower.png">
+          </ion-avatar>
+          <h2>Grow Your Own</h2>
+          <p>Find a farm near your location to rent a pod either seasonal or annual</p>
+          <ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrowleft"></ion-icon>
+        </ion-item>
+        </ion-list>
+        <ion-list>
+      <h2 class="hourtwo">Other Information</h2>
+        <ion-item>		
+          <h3>Hours</h3>
+          <p>09:00 - 21:00, Open Now</p>
+          <ion-icon class="arrowlast" color="orange" name="ios-arrow-down"></ion-icon>
+        </ion-item>
+        <ion-item>		
+          <h3>Address</h3>
+          <p>{{item.distance}}</p>
+          <p>{{item.address2}}</p>
+          <!-- <p>Atlanta, Ga 30305</p> -->
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    
+    

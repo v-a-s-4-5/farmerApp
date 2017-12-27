@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <!--ion-title>search</ion-title-->
-  </ion-navbar>
+	<ion-navbar>
+		<!--ion-title>search</ion-title-->
+	</ion-navbar>
 
 </ion-header>
 
@@ -16,61 +16,58 @@
 <ion-content>
 	<h1>Nearby farms</h1>
 	<ion-searchbar [(ngModel)]="myInput" placeholder="Search By Zipcode and Produce" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
-</ion-searchbar>
-<ion-card>
-    <div class="cardimage">
-		<img src="../assets/imgs/frances-gunn-1.png"/>
-		<ion-icon name="heart" color="white" class="heart" color="green"></ion-icon>
-		<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft"></ion-icon>
-		<ion-chip> <ion-label>3.1 mi away</ion-label></ion-chip>
+	</ion-searchbar>
+	<div *ngFor="let item of items">
+		<ion-card>
+			<div class="cardimage">
+				<img src="{{item.image}}" />
+				<ion-icon name="heart" class="heart" [ngStyle]="{'color':item.fav? 'green' : 'white' }"></ion-icon>
+				<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft" (click) = "showFarmDetail(item)"></ion-icon>
+				<ion-chip>
+					<ion-label>{{item.distance}}</ion-label>
+				</ion-chip>
+			</div>
+		</ion-card>
+		<div class="label-description">
+			<ion-label>{{item.address1}}</ion-label>
+			<p>{{item.address2}}</p>
+			<ion-icon class="arrow-down" color="orange" *ngIf="!item.toggle" name="arrow-down" (click)="item.toggle= !item.toggle"></ion-icon>
+		</div>
+		<div class="customrow" *ngIf="item.toggle">
+			<ion-row>
+				<ion-col col-3 (click)="showAlert()">
+					<div class="custom-col">
+						<ion-icon color="green" name="call"></ion-icon>
+						<p>Call</p>
+					</div>
+				</ion-col>
+				<ion-col col-3>
+					<div class="custom-col">
+						<ion-icon color="green" name="compass"></ion-icon>
+						<p>Website</p>
+					</div>
+				</ion-col>
+				<ion-col col-3>
+					<div class="custom-col">
+						<ion-icon color="green" name="ios-heart-outline"></ion-icon>
+						<p>unfavorite</p>
+					</div>
+				</ion-col>
+				<ion-col col-3>
+					<div class="custom-col">
+						<ion-icon color="green" name="ios-share-outline"></ion-icon>
+						<p>Share</p>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-label>{{item.label1}}</ion-label>
+			<p>{{item.desc1}}</p>
+			<ion-label>{{item.label2}}</ion-label>
+			<p>{{item.desc2}}</p>
+			<ion-label>{{item.label3}}</ion-label>
+			<p>{{item.desc3}}</p>
+			<ion-icon class="arrow-down" color="orange" name="arrow-up" (click)="item.toggle= !item.toggle"></ion-icon>
+		</div>
 	</div>
-  </ion-card>
-  <div class="label-description">
-  <ion-label>Smith Family Farm At Atlanta History Center </ion-label>
-	<p>130 West Paces Ferry Rd NW, Atlanta GA 30305</p>
-	<ion-icon class="arrow-down" color="orange" *ngIf = "!toggle"  name="arrow-down" (click)="toggle= !toggle"></ion-icon>
-	</div>
-	<div  class="customrow" *ngIf = "toggle">
-	<ion-row>
-	  <ion-col col-3 (click)="showAlert()"><div class="custom-col"><ion-icon color="green" name="call"></ion-icon><p>Call</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="compass"></ion-icon><p>Website</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-heart-outline"></ion-icon><p>unfavorite</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-share-outline"></ion-icon><p>Share</p></div></ion-col>
-	</ion-row>
-	  <ion-label>Delivery/Pickup Abilities</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	  <ion-label>Pods Available</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	  <ion-label>Delivery/Pickup Abilities</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	   <ion-icon class="arrow-down" color="orange" name="arrow-up" (click)="toggle= !toggle"></ion-icon>
-	  </div>
-<ion-card>
-    <div class="cardimage">
-		<img src="../assets/imgs/frances-gunn-2.png"/>
-		<ion-icon name="heart" color="white" class="heart"></ion-icon>
-		<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft"></ion-icon>
-		<ion-chip> <ion-label>3.1 mi away</ion-label></ion-chip>
-	</div>
-  </ion-card>
-  <div class="label-description">
-  <ion-label>Smith Family Farm At Atlanta History Center </ion-label>
-	<p>130 West Paces Ferry Rd NW, Atlanta GA 30305</p>
-	<ion-icon class="arrow-down" color="orange" *ngIf = "!toggle"  name="arrow-down"></ion-icon>
-	</div>
-	<div  class="customrow" *ngIf = "toggle">
-	<ion-row>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="call"></ion-icon><p>Call</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="compass"></ion-icon><p>Website</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-heart-outline"></ion-icon><p>unfavorite</p></div></ion-col>
-	  <ion-col col-3><div class="custom-col"><ion-icon color="green" name="ios-share-outline"></ion-icon><p>Share</p></div></ion-col>
-	</ion-row>
-	  <ion-label>Delivery/Pickup Abilities</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	  <ion-label>Pods Available</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	  <ion-label>Delivery/Pickup Abilities</ion-label>
-	  <p>Drop Zone: 123 Ferry St, Brookhaven, GA 30209</p>
-	  <ion-icon class="arrow-down" color="orange" name="arrow-up"></ion-icon>
-	  </div>
+
 </ion-content>

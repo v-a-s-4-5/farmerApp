@@ -26,7 +26,7 @@ export class TabsPage {
       this.tab2Root = SearchPage;
       this.tab3Root = HistoryPage;
       this.tab4Root = MorePage;      
-    }else{
+    }else if(localStorage.getItem('usertype') == 'farmer'){
       this.tabsDisplay = true;
       this.tab1Root = DashboardPage;
       this.tab2Root = SearchPage;

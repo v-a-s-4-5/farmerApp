@@ -22,7 +22,6 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SignupPage } from '../pages/signup/signup';
 import { FarmersignupPage } from '../pages/farmersignup/farmersignup';
-import { NearbyfarmsPage } from '../pages/nearbyfarms/nearbyfarms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
@@ -34,11 +33,11 @@ import { YourpodPage } from '../pages/yourpod/yourpod';
 import { PaymentPage } from '../pages/payment/payment';
 import { SelectproducePage } from '../pages/selectproduce/selectproduce';
 import { RentpodPage } from '../pages/rentpod/rentpod';
-import { ScreensPage } from '../pages/screens/screens';
 import { ProduceselectedPage } from '../pages/produceselected/produceselected';
 import { SendalertsPage } from '../pages/sendalerts/sendalerts';
 import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
+import { FarmdetailPage } from '../pages/farmdetail/farmdetail';
 import { UserProvider } from '../providers/user/user';
 import firebase from 'firebase';
 
@@ -66,7 +65,6 @@ var firebaseConfig = {
     FarmersignupPage,
     ProducelivestockPage,
     AddpodsPage,
-    NearbyfarmsPage,
     PodprocedurePage,
     YourpodPage,
     PodsPage,
@@ -81,8 +79,8 @@ var firebaseConfig = {
     HistoryPage,
     SignupPage,
     LoginPage,
+    FarmdetailPage,
     TabsPage,
-	ScreensPage
   ],
   imports: [
     BrowserModule,
@@ -120,11 +118,10 @@ var firebaseConfig = {
     PaymentPage,
     FarmersignupPage,
     HistoryPage,
-    NearbyfarmsPage,
     SignupPage,
     LoginPage,
-    TabsPage,
-	ScreensPage
+    FarmdetailPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

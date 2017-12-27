@@ -20,6 +20,7 @@ import { TabsPage } from '../tabs/tabs';
 export class WelcomePage {
 
   constructor(public navCtrl: NavController, public userProvider: UserProvider) {
+	  this.userProvider.signOut();
 		this.userProvider.checkLogin().subscribe( res => {
 			if(res){
 				this.navCtrl.setRoot(TabsPage);

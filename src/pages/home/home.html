@@ -13,32 +13,18 @@
 		<ion-label color="orange">SEE ALL</ion-label>
 	</div>
 	<ion-slides>
-		<ion-slide>
+		<ion-slide *ngFor = "let item of items">
 			<ion-card>
 				<div class="cardimage">
-					<img src="../assets/imgs/frances-gunn-1.png"/>
+					<img src="{{item.image}}"/>
 					<ion-icon name="heart" color="white" class="heart" color="green"></ion-icon>
 					<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft" (click) = "gotoSearchPage()"></ion-icon>
-					<ion-chip> <ion-label>3.1 mi away</ion-label></ion-chip>
+					<ion-chip> <ion-label>{{item.distance}}</ion-label></ion-chip>
 				</div>
 			</ion-card>
 			<div class="label-description">
-			<ion-label>Smith Family Farm At Atlanta History Center </ion-label>
-			  <p>130 West Paces Ferry Rd NW, Atlanta GA 30305</p>
-			</div>
-		</ion-slide>
-		<ion-slide>
-			<ion-card>
-				<div class="cardimage">
-					<img src="../assets/imgs/frances-gunn-1.png"/>
-					<ion-icon name="heart" color="white" class="heart" color="green"></ion-icon>
-					<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft"></ion-icon>
-					<ion-chip> <ion-label>3.1 mi away</ion-label></ion-chip>
-				</div>
-			</ion-card>
-			<div class="label-description">
-			<ion-label>Smith Family Farm At Atlanta History Center </ion-label>
-			  <p>130 West Paces Ferry Rd NW, Atlanta GA 30305</p>
+			<ion-label>{{item.address1}}</ion-label>
+			  <p>{{item.address2}}</p>
 			</div>
 		</ion-slide>
     </ion-slides>
@@ -62,18 +48,6 @@
 	  </ion-item>
     </ion-list>
     <ion-list>
-	<h2 class="hourtwo">Other Information</h2>
-		<ion-item>		
-			<h3>Hours</h3>
-			<p>09:00 - 21:00, Open Now</p>
-		</ion-item>
-		<ion-item>		
-			<h3>Address</h3>
-			<p>3.1mi away</p>
-			<p>130 West Paces Ferry Rd NW,</p>
-			<p>Atlanta, Ga 30305</p>
-			<ion-icon class="arrowlast" color="orange" name="ios-arrow-down"></ion-icon>
-		</ion-item>
 	</ion-list>
 </ion-content>
 
