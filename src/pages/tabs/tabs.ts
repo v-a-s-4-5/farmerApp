@@ -36,6 +36,6 @@ export class TabsPage {
     }
   }
   ionViewDidLoad(){
-    console.log(localStorage.getItem('usertype'));
+    
   }
 }

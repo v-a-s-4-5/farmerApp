@@ -72,6 +72,6 @@ export class UserProvider {
   }
 
   signOut(){
-    this.afAuth.auth.signOut().then( res => localStorage.removeItem('usertype'));
+    this.afAuth.auth.signOut().then( res => console.log);
   }
 }

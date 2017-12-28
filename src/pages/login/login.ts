@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, LoadingController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { UserProvider } from '../../providers/user/user';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -20,13 +20,21 @@ export class LoginPage {
     email: '',
     password: ''
   };
-  constructor(public navCtrl: NavController, public afDB: AngularFireDatabase, public userProvider: UserProvider) {
+  constructor(public navCtrl: NavController, 
+              public afDB: AngularFireDatabase, 
+              public userProvider: UserProvider, 
+              public alert: AlertController, 
+              public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   login(){
+    let loading = this.loadingCtrl.create({
+      content: 'Log in..'
+    });
+    loading.present();
     this.userProvider.doLogin(this.user).then( res => {
       if(res){
         const user = this.afDB.list('/users', ref => {
@@ -34,10 +42,20 @@ export class LoginPage {
         }).valueChanges();
         user.subscribe(response => {
           localStorage.setItem('usertype',response[0]['usertype']);
+          loading.dismiss();
           this.navCtrl.setRoot(TabsPage);
         });
       }
-    }, err => console.log(err))
+    }, err => {
+      this.alert.create({
+        title: 'Error',
+        message: err.message,
+        buttons: [{
+          text: 'OK'
+        }]
+      }).present();
+      loading.dismiss();
+    })
     
   }
 

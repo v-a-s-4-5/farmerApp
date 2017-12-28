@@ -27,10 +27,10 @@
 				<ion-input type="text" placeholder="Zip Code" [(ngModel)] = "user.zipCode" name="zipCode" required></ion-input>
 			</ion-item>
 			<ion-item>
-				<ion-input type="text" placeholder="Email" [(ngModel)] = "user.email" name="email" required></ion-input>
+				<ion-input type="email" placeholder="Email" [(ngModel)] = "user.email" name="email" pattern= "[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ion-input>
 			</ion-item>
 			<ion-item>
-				<ion-input type="password" placeholder="Password" [(ngModel)] = "user.password" name="password" required></ion-input>
+				<ion-input type="password" placeholder="Password" [(ngModel)] = "user.password" name="password" required minlength="6"></ion-input>
 			</ion-item>
 			<ion-item>
 				<button class="signup" ion-button round full center color="orange" [disabled] = "signupForm.invalid">SIGN UP</button>

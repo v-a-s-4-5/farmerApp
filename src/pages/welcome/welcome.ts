@@ -23,9 +23,10 @@ export class WelcomePage {
 	  this.userProvider.signOut();
 		this.userProvider.checkLogin().subscribe( res => {
 			if(res){
+				console.log("inside if");
 				this.navCtrl.setRoot(TabsPage);
 			}
-		})
+		}, err => console.log(err));
   }
 	login(){
 		this.navCtrl.push(LoginPage);

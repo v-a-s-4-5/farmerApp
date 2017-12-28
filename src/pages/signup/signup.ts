@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, LoadingController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 import { LoginPage } from '../login/login';
 import { TabsPage } from '../tabs/tabs';
@@ -23,14 +23,31 @@ export class SignupPage {
     email: '',
     password: ''
   }
-  constructor(public navCtrl: NavController, public userProvider: UserProvider) {
+  constructor(public navCtrl: NavController, 
+              public userProvider: UserProvider, 
+              public alert: AlertController,
+              public loadingCtrl: LoadingController) {
   }
 
   signUp(){
+    let loading = this.loadingCtrl.create({
+      content: 'Registering..'
+    });
+    loading.present();
     this.userProvider.basicSignUp(this.user).then( res => {
       if(res){
         localStorage.setItem('usertype','basic');
+        loading.dismiss();
         this.navCtrl.setRoot(TabsPage);
+      }else{
+        this.alert.create({
+          title: 'Error',
+          message: 'Something went wrong please try again later',
+          buttons: [{
+            text: 'OK'
+          }]
+        }).present();
+        loading.dismiss();
       }
     });
   }
