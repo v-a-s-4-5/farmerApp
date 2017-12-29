@@ -20,11 +20,11 @@ export class MorePage {
   }
 
   logout(){
-    this.userProvider.signOut().then( res => {
+    /*this.userProvider.signOut().then( res => {
       console.log(res);
       localStorage.removeItem('usertype');
       this.navCtrl.setRoot(WelcomePage);
-    });
+    });*/
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
