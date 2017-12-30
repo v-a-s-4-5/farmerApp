@@ -40,13 +40,6 @@ export class SignupPage {
         loading.dismiss();
         this.navCtrl.setRoot(TabsPage);
       }else{
-        this.alert.create({
-          title: 'Error',
-          message: 'Something went wrong please try again later',
-          buttons: [{
-            text: 'OK'
-          }]
-        }).present();
         loading.dismiss();
       }
     });

@@ -3,7 +3,7 @@ import { Injectable,ViewChild } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { Nav } from 'ionic-angular';
+import { Nav, AlertController } from 'ionic-angular';
 import { TabsPage } from '../../pages/tabs/tabs';
 /*
   Generated class for the UserProvider provider.
@@ -14,7 +14,7 @@ import { TabsPage } from '../../pages/tabs/tabs';
 @Injectable()
 export class UserProvider {
   @ViewChild(Nav) nav: Nav; 
-  constructor(public afAuth: AngularFireAuth, public afDB: AngularFireDatabase) {
+  constructor(public afAuth: AngularFireAuth, public afDB: AngularFireDatabase, public alert: AlertController) {
     console.log('Hello UserProvider Provider');
   }
 
@@ -48,7 +48,13 @@ export class UserProvider {
         });
       }
     }, err =>{
-      console.log(err);
+      this.alert.create({
+        title: 'Error',
+        message: err.message,
+        buttons: [{
+          text: 'OK'
+        }]
+      }).present();
     })
   }
 
@@ -67,7 +73,13 @@ export class UserProvider {
         });
       }
     }, err =>{
-      console.log(err);
+      this.alert.create({
+        title: 'Error',
+        message: err.message,
+        buttons: [{
+          text: 'OK'
+        }]
+      }).present();
     })
   }
 
