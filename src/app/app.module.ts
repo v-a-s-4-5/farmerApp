@@ -39,7 +39,8 @@ import { JaneinventoryPage } from '../pages/janeinventory/janeinventory';
 import { ProducelivestockPage } from '../pages/producelivestock/producelivestock';
 import { FarmdetailPage } from '../pages/farmdetail/farmdetail';
 import { UserProvider } from '../providers/user/user';
-import firebase from 'firebase';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { FarmsProvider } from '../providers/farms/farms';
 
 var firebaseConfig = {
   apiKey: "AIzaSyB6FnK7-2XtJHZcvWEalA6BkB-YbKae7T0",
@@ -81,6 +82,7 @@ var firebaseConfig = {
     LoginPage,
     FarmdetailPage,
     TabsPage,
+    ForgotPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -121,13 +123,15 @@ var firebaseConfig = {
     SignupPage,
     LoginPage,
     FarmdetailPage,
-    TabsPage
+    TabsPage,
+    ForgotPasswordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    FarmsProvider
   ]
 })
 export class AppModule {}

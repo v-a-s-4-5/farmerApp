@@ -3,6 +3,7 @@ import { IonicPage, NavController, AlertController, LoadingController } from 'io
 import { TabsPage } from '../tabs/tabs';
 import { UserProvider } from '../../providers/user/user';
 import { AngularFireDatabase } from 'angularfire2/database';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -57,6 +58,21 @@ export class LoginPage {
       loading.dismiss();
     })
     
+  }
+  openForgotPassword(){
+    this.alert.create({
+      title: 'Forgot Password',
+      inputs: [{
+        type: 'email',
+        placeholder: 'Enter Registered Email',
+      }],
+      buttons: [{
+        text: 'Send Email',
+        handler: data => {
+          this.userProvider.checkEmailExist(data[0]);
+        }
+      }]
+    }).present();
   }
 
 }

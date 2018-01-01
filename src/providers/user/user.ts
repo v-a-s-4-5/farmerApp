@@ -4,7 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Nav, AlertController } from 'ionic-angular';
-import { TabsPage } from '../../pages/tabs/tabs';
+
 /*
   Generated class for the UserProvider provider.
 
@@ -14,7 +14,9 @@ import { TabsPage } from '../../pages/tabs/tabs';
 @Injectable()
 export class UserProvider {
   @ViewChild(Nav) nav: Nav; 
-  constructor(public afAuth: AngularFireAuth, public afDB: AngularFireDatabase, public alert: AlertController) {
+  constructor(public afAuth: AngularFireAuth, 
+              public afDB: AngularFireDatabase, 
+              public alert: AlertController) {
     console.log('Hello UserProvider Provider');
   }
 
@@ -85,5 +87,21 @@ export class UserProvider {
 
   signOut(){
     this.afAuth.auth.signOut().then( res => console.log);
+  }
+
+  checkEmailExist(email){
+    this.afAuth.auth.sendPasswordResetEmail(email).then( res => {
+      this.alert.create({
+        title: 'Message',
+        message: 'Email has sent please check',
+        buttons: ['OK']
+      }).present();
+    }, err => {
+      this.alert.create({
+        title: 'Error',
+        message: err.message,
+        buttons: ['OK']
+      }).present();
+    });
   }
 }

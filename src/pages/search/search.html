@@ -29,8 +29,8 @@
 			</div>
 		</ion-card>
 		<div class="label-description">
-			<ion-label>{{item.address1}}</ion-label>
-			<p>{{item.address2}}</p>
+			<ion-label>{{item.name}}</ion-label>
+			<p>{{item.address}}</p>
 			<ion-icon class="arrow-down" color="orange" *ngIf="!item.toggle" name="arrow-down" (click)="item.toggle= !item.toggle"></ion-icon>
 		</div>
 		<div class="customrow" *ngIf="item.toggle">

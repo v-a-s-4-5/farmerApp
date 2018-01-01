@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController, LoadingController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 import { TabsPage } from '../tabs/tabs';
+import { SignupPage } from '../signup/signup';
 /**
  * Generated class for the FarmersignupPage page.
  *
@@ -23,6 +24,7 @@ export class FarmersignupPage {
     email: '',
     password: ''
   }
+
   constructor(public navCtrl: NavController, 
               public userProvider: UserProvider, 
               public alert: AlertController, 
@@ -45,4 +47,7 @@ export class FarmersignupPage {
     });
   }
 
+  goToSignup(){
+    this.navCtrl.push(SignupPage);
+  }
 }

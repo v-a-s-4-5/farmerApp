@@ -10,21 +10,21 @@
 <ion-content>
 	<div class="heading">
 		<h1>Nearby Farms</h1>
-		<ion-label color="orange">SEE ALL</ion-label>
+		<ion-label color="orange" (click) = "gotoSearchPage()">SEE ALL</ion-label>
 	</div>
 	<ion-slides>
 		<ion-slide *ngFor = "let item of items">
 			<ion-card>
 				<div class="cardimage">
 					<img src="{{item.image}}"/>
-					<ion-icon name="heart" color="white" class="heart" color="green"></ion-icon>
-					<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft" (click) = "gotoSearchPage()"></ion-icon>
+					<ion-icon name="heart" class="heart" [ngStyle]="{'color':item.fav? 'green' : 'white' }" (click) = "changeFav(item.key,item.fav)"></ion-icon>
+					<ion-icon name="ios-arrow-round-forward-outline" color="green" class="arrorleft" (click) = "showFarmDetail(item)"></ion-icon>
 					<ion-chip> <ion-label>{{item.distance}}</ion-label></ion-chip>
 				</div>
 			</ion-card>
 			<div class="label-description">
-			<ion-label>{{item.address1}}</ion-label>
-			  <p>{{item.address2}}</p>
+			<ion-label>{{item.name}}</ion-label>
+			  <p>{{item.address}}</p>
 			</div>
 		</ion-slide>
     </ion-slides>
