@@ -5,10 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-	<ion-navbar>
-		<!--ion-title>Sign Up</ion-title-->
-	</ion-navbar>
+	<div class="back-arrow-root">
+		<ion-icon name="arrow-back" (click)="navCtrl.popToRoot()"></ion-icon>
+	</div>
+	
+	<!-- <ion-navbar>
+		
+	</ion-navbar> -->
 
 </ion-header>
 

@@ -41,6 +41,7 @@ import { FarmdetailPage } from '../pages/farmdetail/farmdetail';
 import { UserProvider } from '../providers/user/user';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { FarmsProvider } from '../providers/farms/farms';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
 
 var firebaseConfig = {
   apiKey: "AIzaSyB6FnK7-2XtJHZcvWEalA6BkB-YbKae7T0",
@@ -131,7 +132,8 @@ var firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
-    FarmsProvider
+    FarmsProvider,
+    NativeGeocoder
   ]
 })
 export class AppModule {}

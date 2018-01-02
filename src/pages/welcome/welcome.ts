@@ -20,7 +20,7 @@ import { TabsPage } from '../tabs/tabs';
 export class WelcomePage {
 
   constructor(public navCtrl: NavController, public userProvider: UserProvider) {
-	  this.userProvider.signOut();
+	  //this.userProvider.signOut();
 		this.userProvider.checkLogin().subscribe( res => {
 			if(res){
 				console.log("inside if");
@@ -32,10 +32,11 @@ export class WelcomePage {
 		this.navCtrl.push(LoginPage);
 	}
 	signup(){
-		this.navCtrl.push(SignupPage);
+		//this.navCtrl.push(SignupPage);
+		this.navCtrl.push(FarmersignupPage);
 	}
 	farmersignup(){
-		this.navCtrl.push(FarmersignupPage);
+		
 	}
 
 }

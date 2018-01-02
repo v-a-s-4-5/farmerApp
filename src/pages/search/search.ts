@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
 import { FarmdetailPage } from '../farmdetail/farmdetail';
+import { FarmsProvider } from '../../providers/farms/farms';
+import { UserProvider } from '../../providers/user/user';
 
 /**
  * Generated class for the SearchPage page.
@@ -17,39 +19,74 @@ import { FarmdetailPage } from '../farmdetail/farmdetail';
 export class SearchPage {
   toggle: boolean = false;
   items = [{
-    image: 'https://firebasestorage.googleapis.com/v0/b/farmr-38714.appspot.com/o/farmsimages%2Ffrances-gunn-1.png?alt=media&token=a4cd94fd-fdab-4722-9685-895bafa7d6a9',
+    key: '',
+    image: '',
     distance: '3.1 mi away',
-    name: 'Smith Family Farm At Atlanta History Center ',
-    address: '130 West Paces Ferry Rd NW, Atlanta GA 30305',
+    name: '',
+    address: '',
     toggle: false,
     label1: 'Delivery/Pickup Abilities',
-    desc1: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
+    desc1: '',
     label2: 'Pods Available',
-    desc2: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
-    label3: 'Delivery/Pickup Abilities',
-    desc3: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
-    fav: true
+    desc2: '',
+    label3: 'Livestock / Produce Available',
+    desc3: 'Black Berries, Tommato, Blue Barries, Pumpkin',
+    fav: null
   },
   {
-    image: 'https://firebasestorage.googleapis.com/v0/b/farmr-38714.appspot.com/o/farmsimages%2Ffrances-gunn-2.png?alt=media&token=139efa23-879b-4c34-bc7a-fbccca34b034',
-    distance: '3.1 mi away',
-    name: 'Smith Family Farm At Atlanta History Center ',
-    address: '130 West Paces Ferry Rd NW, Atlanta GA 30305',
+    key: '',
+    image: '',
+    distance: '4.1 mi away',
+    name: '',
+    address: '',
     toggle: false,
     label1: 'Delivery/Pickup Abilities',
-    desc1: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
+    desc1: '',
     label2: 'Pods Available',
-    desc2: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
-    label3: 'Delivery/Pickup Abilities',
-    desc3: 'Drop Zone: 123 Ferry St, Brookhaven, GA 30209',
-    fav: false
+    desc2: '',
+    label3: 'Livestock / Produce Available',
+    desc3: 'Black Berries, tommato, Blue Barries, Pumpkin',
+    fav: null
   }
 ];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+uid: any;
+  constructor(public navCtrl: NavController, 
+              public alertCtrl: AlertController, 
+              public farmsProvider: FarmsProvider,
+              public user: UserProvider,) {
+    let data = this.items;
+    this.items = [];
+    this.user.checkLogin().subscribe( res => this.uid = res);
+    this.farmsProvider.getFarms().subscribe( res => {
+      this.items = [];
+      for(let i=0; i<res.length; i++){
+        data[i].key = res[i].key;
+        data[i].image = res[i].image;
+        data[i].name =  res[i].name;
+        data[i].address = res[i].address;
+        data[i].desc1 = res[i].deliverypickup;
+        data[i].desc2 = res[i].pods;
+        let likeObj = res[i].likedby;
+        if(likeObj != null && likeObj != undefined){
+          Object.keys(likeObj).map((key, index) => {
+            if(likeObj[key].uid === this.uid){
+              data[i].fav = key;
+            }
+          })
+        }else{
+          data[i].fav = null;
+        }
+        if(data[i].fav){
+          this.items.unshift(data[i]);
+        }else{
+          this.items.push(data[i]);
+        }
+      }
+    });
   }
 
   ionViewDidLoad() {
-    console.log(this.items);
+    
   }
   showAlert() {
     let prompt = this.alertCtrl.create({
@@ -74,5 +111,4 @@ export class SearchPage {
   showFarmDetail(item){
     this.navCtrl.push(FarmdetailPage, { data: item});
   }
-
 }

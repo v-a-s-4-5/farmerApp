@@ -29,7 +29,14 @@
 	}
 	ion-navbar button {
     color: #53A318 !important;
-}
+  }
+  .back-arrow-root {
+    width: 100%;
+    float: left;
+    padding: 15px 25px;
+    font-size: 1.4em;
+    color: #53A318;
+  }
 @font-face {
   font-family: "SF Display";
   font-weight: 900;
